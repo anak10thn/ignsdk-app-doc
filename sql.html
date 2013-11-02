@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="qrc:///js/jquery.js"></script>
+<script type="text/javascript" src="qrc:///js/ign.js"></script>
+<script>
+$(document).ready(function(){
+	var sql = ign.sql();
+	/*
+		set driver :
+			sql.driver("sql_driver ex:sqlite2/sqlite3/mysql","connection")
+		connection :
+			mysql = "hostname:user:password:database";
+			sqlite2 or sqlite3 = "database file";
+	*/
+	var driver = sql.driver("mysql","localhost:root:n1d2r3:ignsdk");
+	var qry = sql.query("select * from peserta");
+	if(driver){
+		$(".json").html(qry);
+		var query = $.parseJSON(qry);
+		var html = "";
+		$("h1").html("Status Database Connection : "+query.status);
+		if(query.status){
+			$.each(query.content,function(data){
+				html += "No : "+this.no+"<br>";
+				html += "Nama : "+this.nama+"<br>";
+				html += "Alamat : "+this.alamat+"<br><hr>";
+			});
+		}
+		
+		$(".data").html(html);
+	}
+});
+</script>
+</head>
+<body>
+	<h1></h1>
+	<h2>JSON Data</h2>
+	<div class="json"></div><hr>
+	<h2>Data</h2>
+	<div class="data"></div>
+</body>
+</html>

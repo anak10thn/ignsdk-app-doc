@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="qrc:///js/jquery.js"></script>
+<script type="text/javascript" src="qrc:///js/ign.js"></script>
+<script type="text/javascript">
+var fs = ign.filesystem();
+console.log(fs);
+$(document).ready(function(){
+    //check home path
+    $('#homepath').click(function(){
+        alert("Your HOME PATH : "+fs.homePath());
+    });
+    //check app path
+    $('#apppath').click(function(){
+        alert("Your APP PATH : "+fs.appPath());
+    });
+});
+</script>
+</head>
+<body>
+<a href="index.html"><= Back</a>
+    <h2>INIT</h2><hr>
+    <p>
+    <i>var fs = ign.filesystem();</i>
+    </p>
+    <h2>SYSTEM PATH</h2><hr>
+    <h3>Check Home Path</h3>
+        <p>FUNC : <i>fs.homePath()</i></p>
+        <button id="homepath">Click Me!</button>
+    <h3>Check Application Path</h3>
+        <p>FUNC : <i>fs.appPath()</i></p>
+        <button id="apppath">Click Me!</button>
+    <h2>CHECKING FILE or DIRECTORY</h2><hr>
+    <h3>Checking File or Dir exist</h3>
+        <p>FUNC : <i>fs.axists("/PATH/to/file")</i></p>
+        <p>OUT : <i>bool</i></p>
+    <h3>Checking Directory</h3>
+        <p>FUNC : <i>fs.isDirectory("/PATH/to/dir")</i></p>
+        <p>OUT : <i>bool</i></p>
+    <h3>Checking File</h3>
+        <p>FUNC : <i>fs.isFile("/PATH/to/file")</i></p>
+        <p>OUT : <i>bool</i></p>
+    <h3>Checking Directory</h3>
+        <p>FUNC : <i>fs.isDirectory("/PATH/to/dir")</i></p>
+        <p>OUT : <i>bool</i></p>
+    <h3>Checking Absolute Directory</h3>
+        <p>FUNC : <i>fs.isAbsolute("/PATH/to/dir")</i></p>
+        <p>OUT : <i>bool</i></p>
+    <h3>Checking Executable File</h3>
+        <p>FUNC : <i>fs.isExecutable("/PATH/to/file")</i></p>
+        <p>OUT : <i>bool</i></p>
+    <h3>Checking Writable File</h3>
+        <p>FUNC : <i>fs.isWritable("/PATH/to/file")</i></p>
+        <p>OUT : <i>bool</i></p>
+    <h3>Checking Sym Link</h3>
+        <p>FUNC : <i>fs.isLink("/PATH/to/file")</i></p>
+        <p>OUT : <i>bool</i></p>
+    <h2>DIRECTORY HANDLING</h2><hr>
+        <p>FUNC : <i>fs.dir("option","/PATH/to/dir")</i></p>
+        <p>OPTIONS : <br>
+        <i>
+            "remove" : remove directory<br>
+            "create" : create directory
+        </i></p>
+        <p>OUT : <i>bool</i></p>
+    <h2>FILE HANDLING</h2><hr>
+    <h3>File Remove</h3>
+        <p>FUNC : <i>fs.fileRemove("/PATH/to/file")</i></p>
+        <p>OUT : <i>bool</i></p>
+    <h3>File Write</h3>
+        <p>FUNC : <i>fs.fileWrite("/PATH/to/file","input")</i></p>
+        <p>INPUT : <i>string</i></p>
+        <p>OUT : <i>bool</i></p>
+    <h3>File Read</h3>
+        <p>FUNC : <i>fs.fileRead("/PATH/to/file")</i></p>
+        <p>OUT : <i>string</i></p>
+</body>
+</html>
