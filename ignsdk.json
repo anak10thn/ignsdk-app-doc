@@ -1,12 +1,14 @@
 {
   "config" : { 
 		"debug" : true,
+		"debug-port" : 6969,
 		"websecurity" : true,
 		"name" : "IGNSDK Example"
   },
   "window" : { 
 		"transparent" : false, 
-		"noframe" : false, 
+		"noframe" : false,
+		"notaskbar" : false,
 		"fullscreen" : false,
 		"maximize" : false,
 		"width" : 500,
