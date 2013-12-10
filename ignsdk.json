@@ -6,7 +6,7 @@
 		"name" : "IGNSDK Example"
   },
   "window" : { 
-		"transparent" : false, 
+		"transparent" : true, 
 		"noframe" : false,
 		"notaskbar" : false,
 		"fullscreen" : false,
